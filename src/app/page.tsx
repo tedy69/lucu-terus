@@ -130,8 +130,57 @@ export default function Home() {
     setCurrentMemory((prev) => (prev - 1 + featuredMemories.length) % featuredMemories.length);
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Lucu Terus Entertainment",
+    "description": "A vibrant team entertainment website showcasing our journey, activities, and memorable moments together. From go-kart racing to billiards nights, food gatherings to holiday adventures.",
+    "url": "https://lucu-terus.vercel.app",
+    "logo": "https://lucu-terus.vercel.app/logo.png",
+    "sameAs": [
+      "https://instagram.com/lucuterus",
+      "https://wa.me/yourwhatsappnumber"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Indonesian"]
+    },
+    "knowsAbout": [
+      "Team Building",
+      "Entertainment",
+      "Go-Kart Racing",
+      "Billiards",
+      "Food Gatherings",
+      "Team Activities",
+      "Adventure Sports"
+    ],
+    "activity": [
+      {
+        "@type": "Event",
+        "name": "Go-Kart Racing",
+        "description": "High-speed thrills and friendly competition on the track"
+      },
+      {
+        "@type": "Event",
+        "name": "Billiards Night",
+        "description": "Strategic games and casual conversations over pool"
+      },
+      {
+        "@type": "Event",
+        "name": "Food Gatherings",
+        "description": "Sharing delicious meals and discovering new flavors"
+      }
+    ]
+  };
+
   return (
     <div className='min-h-screen bg-gray-900'>
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Hero Section */}
       <section className='relative min-h-screen flex items-center justify-center overflow-hidden'>
         <div className='absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-900 to-black' />
