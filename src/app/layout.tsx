@@ -1,15 +1,16 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
     default: 'Lucu Terus Entertainment - Team Adventures & Memories',
-    template: '%s | Lucu Terus Entertainment'
+    template: '%s | Lucu Terus Entertainment',
   },
-  description: 'A vibrant team entertainment website showcasing our journey, activities, and memorable moments together. From go-kart racing to billiards nights, food gatherings to holiday adventures.',
+  description:
+    'A vibrant team entertainment website showcasing our journey, activities, and memorable moments together. From go-kart racing to billiards nights, food gatherings to holiday adventures.',
   keywords: [
     'team entertainment',
     'team bonding',
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     'memories',
     'adventures',
     'friendship',
-    'team building'
+    'team building',
   ],
   authors: [{ name: 'Lucu Terus Team' }],
   creator: 'Lucu Terus Team',
@@ -39,22 +40,24 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://lucu-terus.vercel.app',
     title: 'Lucu Terus Entertainment - Team Adventures & Memories',
-    description: 'A vibrant team entertainment website showcasing our journey, activities, and memorable moments together. From go-kart racing to billiards nights, food gatherings to holiday adventures.',
+    description:
+      'A vibrant team entertainment website showcasing our journey, activities, and memorable moments together. From go-kart racing to billiards nights, food gatherings to holiday adventures.',
     siteName: 'Lucu Terus Entertainment',
     images: [
       {
-        url: '/logo.png',
+        url: '/banner.png',
         width: 1200,
         height: 630,
-        alt: 'Lucu Terus Entertainment - Team Logo',
+        alt: 'Lucu Terus Entertainment',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Lucu Terus Entertainment - Team Adventures & Memories',
-    description: 'A vibrant team entertainment website showcasing our journey, activities, and memorable moments together.',
-    images: ['/logo.png'],
+    description:
+      'A vibrant team entertainment website showcasing our journey, activities, and memorable moments together.',
+    images: ['/banner.png'],
     creator: '@lucuterus',
   },
   robots: {
@@ -74,33 +77,25 @@ export const metadata: Metadata = {
       { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
       { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
     ],
-    apple: [
-      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
-    ],
+    apple: [{ url: '/icon-192.png', sizes: '192x192', type: 'image/png' }],
   },
   manifest: '/manifest.json',
   category: 'entertainment',
-}
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang='en' suppressHydrationWarning>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        <meta name="theme-color" content="#eab308" />
-        <meta name="color-scheme" content="dark" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5' />
+        <meta name='theme-color' content='#eab308' />
+        <meta name='color-scheme' content='dark' />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
       </head>
       <body className={inter.className}>
-        <main role="main">
-          {children}
-        </main>
+        <main role='main'>{children}</main>
       </body>
     </html>
-  )
+  );
 }
